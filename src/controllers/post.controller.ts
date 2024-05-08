@@ -47,9 +47,9 @@ const createPost = asyncHadler(async (req, res, next) => {
   });
 
   if (!post) {
-    return next(new ApiError(400, "Post Created error"));
+    return next(new ApiError(400, "Post created error"));
   }
-  res.status(200).json(new ApiResponse(200, {}, "Create post successfully"));
+  res.status(200).json(new ApiResponse(200, {}, "Post created successfully"));
 });
 
 const updatePost = asyncHadler(async (req, res, next) => {
@@ -77,7 +77,7 @@ const updatePost = asyncHadler(async (req, res, next) => {
 const deletePost = asyncHadler(async (req, res, next) => {
   const id = req.params.id;
   if (!id) {
-    return next(new ApiError(400, "Please provide id"));
+    return next(new ApiError(400, "Please provide post id"));
   }
 
   const post = await prisma.post.delete({

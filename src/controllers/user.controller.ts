@@ -23,7 +23,7 @@ const registerUser = asyncHadler(async (req, res, next) => {
   });
 
   if (!user) {
-    return next(new ApiError(400, "User Created error"));
+    return next(new ApiError(400, "User created error"));
   }
   res.status(200).json(new ApiResponse(200, user));
 });

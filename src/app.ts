@@ -1,5 +1,5 @@
-import bodyParser from "body-parser";
 import express, { NextFunction, Request, Response } from "express";
+import bodyParser from "body-parser";
 import ApiError from "./utils/ApiError";
 import userRoutes from "./routes/user.route";
 import postRoutes from "./routes/post.route";

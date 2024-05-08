@@ -19,9 +19,9 @@ const createComment = asyncHadler(async (req, res, next) => {
   });
 
   if (!newComment) {
-    return next(new ApiError(400, "Comment Created error"));
+    return next(new ApiError(400, "Comment created error"));
   }
-  res.status(200).json(new ApiResponse(200, {},"Create Comment successfully"));
+  res.status(200).json(new ApiResponse(200, {},"Comment created successfully"));
 });
 
 const updateComment = asyncHadler(async (req, res, next) => {
@@ -40,7 +40,7 @@ const updateComment = asyncHadler(async (req, res, next) => {
   });
 
   if (!newComment) {
-    return next(new ApiError(500, "Comment update error"));
+    return next(new ApiError(500, "Comment updated error"));
   }
   res.status(200).json(new ApiResponse(200, {}, "Comment updated successfully"));
 });
@@ -48,7 +48,7 @@ const updateComment = asyncHadler(async (req, res, next) => {
 const deleteComment = asyncHadler(async (req, res, next) => {
   const id = req.params.id;
   if (!id) {
-    return next(new ApiError(400, "Please provide id"));
+    return next(new ApiError(400, "Please provide comment id"));
   }
 
   const post = await prisma.comment.delete({
